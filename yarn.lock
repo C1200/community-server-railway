@@ -1022,7 +1022,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"community-server-railway-data@workspace:^, community-server-railway-data@workspace:packages/data":
+"community-server-railway-data@npm:latest":
+  version: 0.0.1
+  resolution: "community-server-railway-data@npm:0.0.1"
+  checksum: 39b4d37af22ad0d4ed04e342b803956260b09cde00ea9b7aadf9abfb4c31d8dddbd815b5e83758dd1b32a0befa75ad7754d1e3b2a8f083a99c391b70763fa885
+  languageName: node
+  linkType: hard
+
+"community-server-railway-data@workspace:packages/data":
   version: 0.0.0-use.local
   resolution: "community-server-railway-data@workspace:packages/data"
   dependencies:
@@ -2620,7 +2627,7 @@ __metadata:
     "@types/react": ^19.0.10
     "@types/react-dom": ^19.0.4
     "@vitejs/plugin-react-swc": ^3.8.0
-    community-server-railway-data: "workspace:^"
+    community-server-railway-data: latest
     eslint: ^9.21.0
     eslint-plugin-react-hooks: ^5.1.0
     eslint-plugin-react-refresh: ^0.4.19
