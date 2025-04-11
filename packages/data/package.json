@@ -1,6 +1,6 @@
 {
   "name": "community-server-railway-data",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "exports": {
     ".": {
@@ -16,6 +16,12 @@
       "types": "./dist/types.d.ts"
     }
   },
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "typescript": "^5.8.3",
     "vite": "^6.2.6"
