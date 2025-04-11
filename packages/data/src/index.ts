@@ -3,4 +3,4 @@
 
 import { StationGroup } from "./types.js";
 
-export const stations: StationGroup[];
+export const stations: StationGroup[] = null;

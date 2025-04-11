@@ -1,6 +1,6 @@
 {
   "name": "community-server-railway-data",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "type": "module",
   "exports": {
     ".": {
@@ -15,9 +15,6 @@
       "default": "./dist/types.js",
       "types": "./dist/types.d.ts"
     }
-  },
-  "scripts": {
-    "prepublish": "tsc"
   },
   "files": [
     "dist"

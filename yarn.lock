@@ -1023,9 +1023,9 @@ __metadata:
   linkType: hard
 
 "community-server-railway-data@npm:latest":
-  version: 0.0.1
-  resolution: "community-server-railway-data@npm:0.0.1"
-  checksum: 39b4d37af22ad0d4ed04e342b803956260b09cde00ea9b7aadf9abfb4c31d8dddbd815b5e83758dd1b32a0befa75ad7754d1e3b2a8f083a99c391b70763fa885
+  version: 0.0.4
+  resolution: "community-server-railway-data@npm:0.0.4"
+  checksum: acdf3cc7e92ca61f50c874c716aa35ef4ca9202874bdfe155ecd2490b82baacd8a3252553c4883ca5e7d5db55f5023c9b59ef4c0655acc142f876a128db1afda
   languageName: node
   linkType: hard
 
