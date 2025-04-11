@@ -5,7 +5,14 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@community-server-railway/data@workspace:^, @community-server-railway/data@workspace:packages/data":
+"@community-server-railway/data@file:../data::locator=web%40workspace%3Apackages%2Fweb":
+  version: 0.0.0
+  resolution: "@community-server-railway/data@file:../data#../data::hash=6005c9&locator=web%40workspace%3Apackages%2Fweb"
+  checksum: ce52d26b0f5fb75e79a4b2289a06543f94a381d22fc12597e0bd52617aa7a9d57c3124f7e7c353836067e7e7b3ed25098e58b7909aa2c92751ca6fd9bd6d9ffe
+  languageName: node
+  linkType: hard
+
+"@community-server-railway/data@workspace:packages/data":
   version: 0.0.0-use.local
   resolution: "@community-server-railway/data@workspace:packages/data"
   dependencies:
@@ -2615,7 +2622,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:packages/web"
   dependencies:
-    "@community-server-railway/data": "workspace:^"
+    "@community-server-railway/data": ../data
     "@eslint/js": ^9.21.0
     "@types/leaflet": ^1.9.17
     "@types/react": ^19.0.10
