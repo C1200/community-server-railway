@@ -7,12 +7,14 @@ export type RouteInit = (typeof routes)[number];
 export class Route {
   name: string;
   operator: string;
+  suffix?: string;
   color: string;
   stations: Station[];
 
   private constructor(init: RouteInit) {
     this.name = init.name;
     this.operator = init.operator;
+    this.suffix = init.suffix;
     this.color = init.color;
     this.stations = init.stations.map((stationName) => {
       const station = Station.getByName(stationName);
@@ -30,7 +32,12 @@ export class Route {
   }
 
   private static getId(init: Route | RouteInit): string {
-    return `${slug(init.operator)}/${slug(init.name)}`;
+    return (
+      slug(init.operator) +
+      "/" +
+      slug(init.name) +
+      (init.suffix ? slug(init.suffix) : "")
+    );
   }
 
   static getAll(): Route[] {

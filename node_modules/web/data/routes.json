@@ -119,10 +119,45 @@
     "stations": [
       "Two Cities Central",
       "Szolnok",
-      "Molten Works",
       "Silverfall",
       "Kothausen",
       "Riverside Central"
+    ]
+  },
+  {
+    "name": "RE 101",
+    "suffix": "A",
+    "operator": "Danube Trains",
+    "color": "#A9455D",
+    "stations": [
+      "Fairyfield",
+      "Ivory Beach",
+      "Molten Works",
+      "Silverfall"
+    ]
+  },
+  {
+    "name": "RE 101",
+    "suffix": "B",
+    "operator": "Danube Trains",
+    "color": "#A9455D",
+    "stations": [
+      "Pripyat",
+      "Ivory Beach",
+      "Molten Works",
+      "Silverfall"
+    ]
+  },
+  {
+    "name": "IC 103",
+    "operator": "Danube Trains",
+    "color": "#A9455D",
+    "stations": [
+      "Szolnok",
+      "Silverfall",
+      "Kothausen",
+      "Tercet",
+      "Przerywnik"
     ]
   },
   {
