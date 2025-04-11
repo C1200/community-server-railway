@@ -27,7 +27,7 @@
   {
     "name": "SR1",
     "operator": "SXR",
-    "color": "#E36904",
+    "color": "#2A7230",
     "stations": [
       "Wawer",
       "North Bohemia - Bardo",
@@ -38,7 +38,7 @@
   {
     "name": "SR12",
     "operator": "SXR",
-    "color": "#E36904",
+    "color": "#2A7230",
     "stations": [
       "North Bohemia",
       "Wawer"
@@ -66,6 +66,19 @@
     ]
   },
   {
+    "name": "RB64",
+    "operator": "DB",
+    "color": "#f00",
+    "stations": [
+      "Spawn",
+      "Salzingen Hbf",
+      "Elmswalde HBF",
+      "Ochtrup",
+      "Hippostetten",
+      "Luzernthal West"
+    ]
+  },
+  {
     "name": "RB15",
     "operator": "Agilis",
     "color": "#c4e23a",
@@ -77,6 +90,49 @@
       "Eichenberg",
       "Hippostetten",
       "Luzernthal West"
+    ]
+  },
+  {
+    "name": "A1",
+    "operator": "Alba",
+    "color": "#1455C0",
+    "stations": [
+      "Two Cities Central",
+      "Kothausen",
+      "Silverfall"
+    ]
+  },
+  {
+    "name": "RCR",
+    "operator": "RCR",
+    "color": "#7D8769",
+    "stations": [
+      "Two Cities Central",
+      "Tercet",
+      "Przerywnik"
+    ]
+  },
+  {
+    "name": "Tojak IC",
+    "operator": "Tojak",
+    "color": "#000",
+    "stations": [
+      "Two Cities Central",
+      "Szolnok",
+      "Molten Works",
+      "Silverfall",
+      "Kothausen",
+      "Riverside Central"
+    ]
+  },
+  {
+    "name": "IC 104",
+    "operator": "Danube Trains",
+    "color": "#A9455D",
+    "stations": [
+      "Silverfall",
+      "Kothausen",
+      "Two Cities Central"
     ]
   }
 ]
