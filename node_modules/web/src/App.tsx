@@ -1,11 +1,6 @@
+import { useEffect, useState } from "react";
 import * as L from "leaflet";
-import {
-  CircleMarker,
-  MapContainer,
-  Polyline,
-  Tooltip,
-  useMap,
-} from "react-leaflet";
+import { CircleMarker, MapContainer, Polyline, Tooltip } from "react-leaflet";
 import { Route } from "./data/Route";
 import { Station } from "./data/Station";
 import useLocation from "./utils/useLocation";
@@ -45,8 +40,6 @@ function StationMarker(props: {
   showTooltip?: boolean;
   onClick?: () => void;
 }) {
-  const map = useMap();
-
   return (
     <CircleMarker
       key={props.station.name}
@@ -60,7 +53,6 @@ function StationMarker(props: {
       }}
       eventHandlers={{
         click() {
-          map.flyTo(props.station.location);
           props.onClick?.();
         },
       }}
@@ -87,8 +79,6 @@ function StationInfoBox(props: {
   station: Station;
   setActiveRoute: (id: string) => void;
 }) {
-  const map = useMap();
-
   return (
     <div className="leaflet-bottom leaflet-left">
       <div className="leaflet-control leaflet-bar csr-info-box">
@@ -96,16 +86,10 @@ function StationInfoBox(props: {
 
         {Route.getByStation(props.station).map((route) => (
           <div
+            key={route.id}
             className="csr-station-route"
             onClick={() => {
               props.setActiveRoute(route.id);
-
-              map.fitBounds(
-                L.polyline(
-                  route.stations.map((station) => station.location)
-                ).getBounds(),
-                { padding: [50, 50] }
-              );
             }}
           >
             <OutlinedCircle color={route.color} />
@@ -124,8 +108,6 @@ function RouteInfoBox(props: {
   route: Route;
   setActiveStation: (id: string) => void;
 }) {
-  const map = useMap();
-
   return (
     <div className="leaflet-bottom leaflet-left">
       <div className="leaflet-control leaflet-bar csr-info-box">
@@ -134,10 +116,10 @@ function RouteInfoBox(props: {
 
         {props.route.stations.map((station) => (
           <div
+            key={station.id}
             className="csr-station-route"
             onClick={() => {
               props.setActiveStation(station.id);
-              map.flyTo(station.location);
             }}
           >
             {[props.route.firstStop.id, props.route.lastStop.id].includes(
@@ -159,6 +141,7 @@ export default function App(props: {
   center: [number, number];
   colors?: Partial<Colors>;
 }) {
+  const [map, setMap] = useState<L.Map | null>(null);
   const [path, setPath] = useLocation();
   const pathParts = path.substring(1).split("/");
 
@@ -185,8 +168,25 @@ export default function App(props: {
     ? Station.getById(activeStation)
     : undefined;
 
+  useEffect(() => {
+    if (resolvedActiveRoute)
+      map?.fitBounds(
+        L.polyline(
+          resolvedActiveRoute.stations.map((station) => station.location)
+        ).getBounds(),
+        { padding: [50, 50] }
+      );
+  }, [map, resolvedActiveRoute]);
+
+  useEffect(() => {
+    if (resolvedActiveStation) map?.flyTo(resolvedActiveStation.location);
+  }, [map, resolvedActiveStation]);
+
   return (
     <MapContainer
+      ref={(map) => {
+        setMap(map);
+      }}
       center={props.center}
       zoom={0}
       minZoom={-4}
@@ -200,11 +200,12 @@ export default function App(props: {
       }}
     >
       {Route.getAll().map((route) => (
-        <RouteLine route={route} color="#eee" />
+        <RouteLine key={route.id} route={route} color="#eee" />
       ))}
 
       {Station.getAll().map((station) => (
         <StationMarker
+          key={station.id}
           station={station}
           colors={colors}
           dim={activeStation ? activeStation !== station.id : !!activeRoute}
@@ -235,6 +236,7 @@ export default function App(props: {
 
           {resolvedActiveRoute.stations.map((station) => (
             <StationMarker
+              key={station.id}
               station={station}
               showTooltip
               colors={{
