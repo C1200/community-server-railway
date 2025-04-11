@@ -1,0 +1,82 @@
+[
+  {
+    "name": "NS Express",
+    "operator": "Valiance Express",
+    "color": "#CB0A3D",
+    "stations": [
+      "Wawer",
+      "Two Cities Central",
+      "Spawn",
+      "Lavender Valley",
+      "Salzingen Hbf"
+    ]
+  },
+  {
+    "name": "IC \"Salzer\"",
+    "operator": "SXR",
+    "color": "#E36904",
+    "stations": [
+      "Wawer",
+      "Two Cities Central",
+      "Spawn",
+      "Lavender Valley",
+      "Salzingen (Nord)",
+      "Salzingen Hbf"
+    ]
+  },
+  {
+    "name": "SR1",
+    "operator": "SXR",
+    "color": "#E36904",
+    "stations": [
+      "Wawer",
+      "North Bohemia - Bardo",
+      "Two Cities Central",
+      "Spawn"
+    ]
+  },
+  {
+    "name": "SR12",
+    "operator": "SXR",
+    "color": "#E36904",
+    "stations": [
+      "North Bohemia",
+      "Wawer"
+    ]
+  },
+  {
+    "name": "R10",
+    "operator": "DB",
+    "color": "#f00",
+    "stations": [
+      "Spawn",
+      "Lavender Valley",
+      "Nebelburg",
+      "Salzingen (Nord)",
+      "Salzingen Hbf"
+    ]
+  },
+  {
+    "name": "RE1",
+    "operator": "DB",
+    "color": "#f00",
+    "stations": [
+      "Spawn",
+      "Salzingen Hbf"
+    ]
+  },
+  {
+    "name": "RB15",
+    "operator": "Agilis",
+    "color": "#c4e23a",
+    "stations": [
+      "Salzingen Hbf",
+      "Hohenried",
+      "Wiesenau",
+      "Ochtrup",
+      "Eichenberg",
+      "Hippostetten",
+      "Luzernthal West"
+    ]
+  }
+]

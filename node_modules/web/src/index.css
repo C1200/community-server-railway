@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+
+html,
+body,
+#root,
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.csr-name-tooltip {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  color: #000;
+  font-weight: bold;
+}
+
+.csr-name-tooltip::before {
+  content: unset;
+}
+
+.csr-info-box {
+  padding: 1rem 1.5rem;
+  background: #fff;
+}
+
+.csr-station-name {
+  margin: 0;
+  margin-bottom: .5rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.csr-route-title {
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+.csr-operator-name {
+  margin: 0;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+
+.csr-station-route {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  margin-top: 0.4rem;
+
+  cursor: pointer;
+}
+
+.csr-station-route .csr-route-circle {
+  height: 1rem;
+}
+
+.csr-station-route .csr-route-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.csr-station-route .csr-route-termini {
+  margin: 0;
+}
