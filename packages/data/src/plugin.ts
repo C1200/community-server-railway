@@ -9,12 +9,12 @@ export default function data(config: PluginConfig): Plugin {
     name: "data",
     enforce: "pre",
     resolveId(source) {
-      if (source === "@community-server-railway/data") {
-        return "@community-server-railway/data";
+      if (source === "community-server-railway-data") {
+        return "community-server-railway-data";
       }
     },
     async load(id) {
-      if (id === "@community-server-railway/data") {
+      if (id === "community-server-railway-data") {
         const stations = await gatherStations(config);
         return `export const stations = ${JSON.stringify(stations)}`;
       }

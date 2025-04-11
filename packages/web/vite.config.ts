@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import data from "@community-server-railway/data/plugin";
+import data from "community-server-railway-data/plugin";
 
 import stations from "./data/stations.json";
 

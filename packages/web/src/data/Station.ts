@@ -1,5 +1,5 @@
-import { stations } from "@community-server-railway/data";
-import { StationGroup } from "@community-server-railway/data/types";
+import { stations } from "community-server-railway-data";
+import { StationGroup } from "community-server-railway-data/types";
 import { averageLocation } from "../utils/maths";
 import slug from "../utils/slug";
 
