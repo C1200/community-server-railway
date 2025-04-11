@@ -149,6 +149,30 @@
     ]
   },
   {
+    "name": "IC 101",
+    "operator": "Danube Trains",
+    "color": "#A9455D",
+    "stations": [
+      "Riverside Central",
+      "Kothausen",
+      "r.station",
+      "Silverfall"
+    ]
+  },
+  {
+    "name": "IC 102",
+    "operator": "Danube Trains",
+    "color": "#A9455D",
+    "stations": [
+      "Riverside Central",
+      "Kothausen",
+      "Silverfall",
+      "Silver Aquarium",
+      "Mountain Village",
+      "South Hills"
+    ]
+  },
+  {
     "name": "IC 103",
     "operator": "Danube Trains",
     "color": "#A9455D",
