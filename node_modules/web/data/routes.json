@@ -31,7 +31,7 @@
   {
     "name": "SR1",
     "operator": "SXR",
-    "short": "1",
+    "short": "R1",
     "color": "#2A7230",
     "stations": [
       "Wawer",
@@ -47,7 +47,7 @@
   {
     "name": "SR12",
     "operator": "SXR",
-    "short": "12",
+    "short": "R12",
     "color": "#2A7230",
     "stations": ["North Bohemia", "Wawer"],
     "trains": ["ba8ac63c-ce6e-43d4-bcc7-917afbab1ef4"]
@@ -55,7 +55,7 @@
   {
     "name": "R10",
     "operator": "DB",
-    "short": "10",
+    "short": "R10",
     "color": "#f00",
     "stations": [
       "Spawn",
@@ -69,15 +69,15 @@
   {
     "name": "RE1",
     "operator": "DB",
-    "short": "1",
+    "short": "RE1",
     "color": "#f00",
     "stations": ["Spawn", "Salzingen Hbf"],
-    "trains": []
+    "trains": ["c19fbba7-b447-42d5-8cfe-cfed9a50c4cd"]
   },
   {
     "name": "RB64",
     "operator": "DB",
-    "short": "64",
+    "short": "R64",
     "color": "#f00",
     "stations": [
       "Spawn",
@@ -98,7 +98,7 @@
   {
     "name": "RB15",
     "operator": "Agilis",
-    "short": "15",
+    "short": "R15",
     "color": "#c4e23a",
     "stations": [
       "Salzingen Hbf",

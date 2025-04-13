@@ -61,5 +61,14 @@
     },
     "carriageOffset": 0,
     "trains": ["27a9e5f2-103b-434e-87d5-2293e6f60f58"]
+  },
+  "7": {
+    "comment": "RE1",
+    "livery": {
+      "color": "linear-gradient(180deg, #CE2029 40%, #fff 40% 60%, #CE2029 60%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": ["c19fbba7-b447-42d5-8cfe-cfed9a50c4cd"]
   }
 }
