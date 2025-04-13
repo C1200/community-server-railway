@@ -98,5 +98,20 @@
     },
     "carriageOffset": 0,
     "trains": ["981f0680-d0cc-4b9e-a744-e2f1b24bbbe2"]
+  },
+  "11": {
+    "comment": "RB15",
+    "livery": {
+      "color": "linear-gradient(180deg, #7d7d73 85%, #86AA39 85%)",
+      "text": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": [
+      "079819bc-e903-4271-9432-d8b1151653ca",
+      "e41deb2e-c35b-4236-a64c-be9338f0cfdc",
+      "c780fadb-4324-4f43-be8a-8f56940d1bd5",
+      "92fbbaed-9d17-407a-a2cf-2c48bff3e34a",
+      "72c9d0bf-2c52-4b1e-9750-65b44cb89fb5"
+    ]
   }
 }

@@ -110,7 +110,13 @@
       "Hippostetten",
       "Luzernthal West"
     ],
-    "trains": []
+    "trains": [
+      "079819bc-e903-4271-9432-d8b1151653ca",
+      "e41deb2e-c35b-4236-a64c-be9338f0cfdc",
+      "c780fadb-4324-4f43-be8a-8f56940d1bd5",
+      "92fbbaed-9d17-407a-a2cf-2c48bff3e34a",
+      "72c9d0bf-2c52-4b1e-9750-65b44cb89fb5"
+    ]
   },
   {
     "name": "A1",
@@ -140,25 +146,25 @@
       "Kothausen",
       "Riverside Central"
     ],
-    "trains": []
+    "trains": ["9c0c8eec-502d-497a-af19-a8f18cdf98be"]
   },
   {
     "name": "RE 101",
     "suffix": "A",
     "operator": "Danube Trains",
-    "short": "101",
+    "short": "101A",
     "color": "#A9455D",
     "stations": ["Fairyfield", "Ivory Beach", "Molten Works", "Silverfall"],
-    "trains": []
+    "trains": ["410300b1-74c8-438e-9cd3-e6f470ecd5ca"]
   },
   {
     "name": "RE 101",
     "suffix": "B",
     "operator": "Danube Trains",
-    "short": "101",
+    "short": "101B",
     "color": "#A9455D",
     "stations": ["Pripyat", "Ivory Beach", "Molten Works", "Silverfall"],
-    "trains": []
+    "trains": ["3966ab5d-662f-4ede-95ec-aa6edabd55bb"]
   },
   {
     "name": "IC 101",
@@ -166,7 +172,7 @@
     "short": "101",
     "color": "#A9455D",
     "stations": ["Riverside Central", "Kothausen", "r.station", "Silverfall"],
-    "trains": []
+    "trains": ["b545a0ac-a304-4f36-b5fb-b0e04154b254"]
   },
   {
     "name": "IC 102",
@@ -181,7 +187,10 @@
       "Mountain Village",
       "South Hills"
     ],
-    "trains": []
+    "trains": [
+      "d621c1aa-c82e-4cf4-8728-9ed6ea7719fa",
+      "7d17349f-8cbd-4c0e-b33e-1f32c306ae22"
+    ]
   },
   {
     "name": "IC 103",
@@ -189,7 +198,7 @@
     "short": "103",
     "color": "#A9455D",
     "stations": ["Szolnok", "Silverfall", "Kothausen", "Tercet", "Przerywnik"],
-    "trains": []
+    "trains": ["077ad3e2-5e9a-4282-b23e-3ed22db0a4a0"]
   },
   {
     "name": "IC 104",
