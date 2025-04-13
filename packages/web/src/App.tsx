@@ -232,7 +232,6 @@ export default function App(props: {
   const [location, setLocation] = useLocation();
   const { data: trains } = useSWR("trains", () => Train.getAllLive(), {
     refreshInterval: 15000,
-    revalidateOnFocus: false,
     onError(err) {
       console.error(err);
     },
