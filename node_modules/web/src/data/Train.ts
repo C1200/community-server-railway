@@ -40,7 +40,6 @@ interface TrackMapTrains {
 
 export default class Train {
   private static cache: Map<string, Train> = new Map();
-  private static angleCache: Map<string, number> = new Map();
 
   id: string;
   name: string;
@@ -106,9 +105,9 @@ export default class Train {
     return new Train(init);
   }
 
-  private static maybeWrap(init: TrainInit | undefined): Train | undefined {
-    return init ? new Train(init) : undefined;
-  }
+  //private static maybeWrap(init: TrainInit | undefined): Train | undefined {
+  //  return init ? new Train(init) : undefined;
+  //}
 
   private static getExtraData(id: string) {
     const result = Object.entries(trains).find(([, { trains }]) =>
