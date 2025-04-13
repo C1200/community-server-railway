@@ -59,7 +59,7 @@
       "color": "linear-gradient(180deg, #7d7d73 20%, #d0d6d7 20% 60%, #5fab12 60% 80%, #df6000 80%)",
       "stroke": "#fff"
     },
-    "carriageOffset": 0,
+    "carriageOffset": 1,
     "trains": ["27a9e5f2-103b-434e-87d5-2293e6f60f58"]
   },
   "7": {
@@ -70,5 +70,33 @@
     },
     "carriageOffset": 0,
     "trains": ["c19fbba7-b447-42d5-8cfe-cfed9a50c4cd"]
+  },
+  "8": {
+    "comment": "A1",
+    "livery": {
+      "color": "linear-gradient(45deg, #405d7b 20%, #fff 20% 40%, #405d7b 40%)",
+      "text": "#fff",
+      "stroke": "#405d7b"
+    },
+    "carriageOffset": 0,
+    "trains": ["2560eb25-6c00-4760-b8fc-db938b22e938"]
+  },
+  "9": {
+    "comment": "IC104",
+    "livery": {
+      "color": "radial-gradient(circle at bottom center, #8d3828 30%, #f78a1e 30% 60%, #df6000 60% 90%, #fff 90%)",
+      "text": "#fff"
+    },
+    "carriageOffset": 1,
+    "trains": ["c90845d0-6aa7-4040-a987-115c6d5b29e9"]
+  },
+  "10": {
+    "comment": "RCR",
+    "livery": {
+      "color": "linear-gradient(180deg, #fff 45%, #282a8f 45% 65%, #8f1a1a 65%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": ["981f0680-d0cc-4b9e-a744-e2f1b24bbbe2"]
   }
 }

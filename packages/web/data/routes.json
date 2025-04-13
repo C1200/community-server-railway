@@ -117,7 +117,7 @@
     "short": "A1",
     "color": "#1455C0",
     "stations": ["Two Cities Central", "Kothausen", "Silverfall"],
-    "trains": []
+    "trains": ["2560eb25-6c00-4760-b8fc-db938b22e938"]
   },
   {
     "name": "RCR",
@@ -125,7 +125,7 @@
     "short": "RCR",
     "color": "#7D8769",
     "stations": ["Two Cities Central", "Tercet", "Przerywnik"],
-    "trains": []
+    "trains": ["981f0680-d0cc-4b9e-a744-e2f1b24bbbe2"]
   },
   {
     "name": "Tojak IC",
@@ -196,6 +196,6 @@
     "short": "104",
     "color": "#A9455D",
     "stations": ["Silverfall", "Kothausen", "Two Cities Central"],
-    "trains": []
+    "trains": ["c90845d0-6aa7-4040-a987-115c6d5b29e9"]
   }
 ]
