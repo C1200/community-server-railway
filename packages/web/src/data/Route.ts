@@ -1,12 +1,24 @@
 import slug from "../utils/slug";
+import Train from "./Train";
 import { Station } from "./Station";
-import routes from "../../data/routes.json";
+import _routes from "../../data/routes.json";
 
-export type RouteInit = (typeof routes)[number];
+const routes: RouteInit[] = _routes;
+
+export interface RouteInit {
+  name: string;
+  operator: string;
+  short: string;
+  suffix?: string;
+  color: string;
+  stations: string[];
+  trains: string[];
+};
 
 export class Route {
   name: string;
   operator: string;
+  short: string;
   suffix?: string;
   color: string;
   stations: Station[];
@@ -14,6 +26,7 @@ export class Route {
   private constructor(init: RouteInit) {
     this.name = init.name;
     this.operator = init.operator;
+    this.short = init.short;
     this.suffix = init.suffix;
     this.color = init.color;
     this.stations = init.stations.map((stationName) => {
@@ -52,6 +65,12 @@ export class Route {
     return routes
       .filter((route) => route.stations.includes(station.name))
       .map(this.wrap);
+  }
+
+  static getByTrain(train: Train): Route | undefined {
+    return this.maybeWrap(
+      routes.find((route) => route.trains.includes(train.id))
+    );
   }
 
   get id() {

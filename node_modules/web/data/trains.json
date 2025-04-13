@@ -1,0 +1,65 @@
+{
+  "1": {
+    "comment": "Valiance Express Class 43 (2 power cars)",
+    "livery": {
+      "color": "linear-gradient(180deg, #000 45%, #fff 45% 55%, #f00 55% 65%, #fff 65%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 2,
+    "trains": ["b77c91f9-4d6c-4148-b0f4-45e203867075"]
+  },
+  "2": {
+    "comment": "DB Talent br 643",
+    "livery": {
+      "color": "linear-gradient(180deg, #CE2029 85%, #fff 85%)",
+      "text": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": [
+      "95900ebd-db77-4bf3-84ec-65e4dc91ea31",
+      "c1a3b7ef-220f-4732-bafc-ce5fb9adac6f",
+      "8a2dc3bb-3bd6-4bf9-b03e-fdf81ef9e7ca",
+      "a73c4dfc-0c97-4a84-ab66-848e045d5588",
+      "82a5abd6-27a0-46ac-8417-ccb5ae6c13c9"
+    ]
+  },
+  "3": {
+    "comment": "R10",
+    "livery": {
+      "color": "linear-gradient(180deg, #f1b00d 30%, #df6000 30% 70%, #8f1d1d 70%)",
+      "text": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": ["6d79a14c-5dd2-4e3c-ac05-f94e799fd641"]
+  },
+  "4": {
+    "comment": "SR1",
+    "livery": {
+      "color": "linear-gradient(180deg, #7d7d73 20%, #485b1f 20% 40%, #5fab12 40% 80%, #d0d6d7 80%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": [
+      "27df743b-03df-4d89-a5b9-3171ae8bd7d7",
+      "f836188c-d87b-4637-bf9b-08f54a75d797"
+    ]
+  },
+  "5": {
+    "comment": "SR12",
+    "livery": {
+      "color": "radial-gradient(circle at bottom left, #d0d6d7 25%, #5fab12 25% 50%, #485b1f 50% 75%, #f1b00d 75%)",
+      "text": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": ["ba8ac63c-ce6e-43d4-bcc7-917afbab1ef4"]
+  },
+  "6": {
+    "comment": "IC Salzer",
+    "livery": {
+      "color": "linear-gradient(180deg, #7d7d73 20%, #d0d6d7 20% 60%, #5fab12 60% 80%, #df6000 80%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": ["27a9e5f2-103b-434e-87d5-2293e6f60f58"]
+  }
+}

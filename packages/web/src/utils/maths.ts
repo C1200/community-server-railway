@@ -1,5 +1,17 @@
-export function xz(x: number, z: number): [number, number] {
-  return [z, x];
+export function xz(
+  ...args:
+    | [x: number, y: number]
+    | [coords: { x: number; y: number; z: number }]
+): [number, number] {
+  const [a, b] = args;
+
+  if (typeof a === "object") {
+    return [a.z, a.x];
+  } else if (typeof a === "number" && typeof b === "number") {
+    return [b, a];
+  }
+
+  throw new Error("Invalid input");
 }
 
 export function averageLocation(

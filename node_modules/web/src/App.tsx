@@ -1,9 +1,18 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import * as L from "leaflet";
-import { CircleMarker, MapContainer, Polyline, Tooltip } from "react-leaflet";
+import {
+  CircleMarker,
+  MapContainer,
+  Marker,
+  Polyline,
+  Popup,
+  Tooltip,
+} from "react-leaflet";
+import Train from "./data/Train";
 import { Route } from "./data/Route";
 import { Station } from "./data/Station";
-import useLocation from "./utils/useLocation";
+import useLocation, { Link } from "./utils/useLocation";
+import useSWR from "swr";
 
 interface Colors {
   background: string;
@@ -31,6 +40,29 @@ function NormalCircle(props: { color: string }) {
       <circle cx={5} cy={5} r={3} fill={props.color} />
     </svg>
   );
+}
+
+function SecondsCounter(props: { time: number | Date }) {
+  const [text, setText] = useState("");
+
+  const time = props.time instanceof Date ? props.time.getTime() : props.time;
+
+  const update = useCallback(() => {
+    const f = new Intl.RelativeTimeFormat();
+    const relative = Math.floor((time - Date.now()) / 1000);
+    setText(f.format(relative, "seconds"));
+  }, [time]);
+
+  useEffect(() => {
+    update();
+    const interval = setInterval(update, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [update]);
+
+  return text;
 }
 
 function StationMarker(props: {
@@ -72,6 +104,54 @@ function RouteLine(props: { route: Route; color: string }) {
         color: props.color,
       }}
     />
+  );
+}
+
+function TrainMarker(props: { train: Train }) {
+  if (!props.train.location || !props.train.angle || !props.train.route)
+    return null;
+
+  const icon = document.createElement("svg");
+
+  icon.classList.add("csr-livery");
+  if (props.train.angle > 180) icon.classList.add("csr-flip-livery");
+  if (props.train.livery)
+    icon.classList.add("csr-livery-" + props.train.livery);
+
+  icon.setAttribute("width", "24");
+  icon.setAttribute("height", "16");
+  icon.style.rotate = `${props.train.angle}deg`;
+  icon.innerHTML = `<text x="12" y="12">${
+    props.train.route?.short || ""
+  }</text>`;
+
+  return (
+    <Marker
+      position={props.train.location}
+      icon={L.divIcon({
+        className: "csr-train-marker",
+        iconSize: [24, 24],
+        html: icon,
+      })}
+    >
+      <Popup offset={[0, -5]} closeButton={false}>
+        <p>
+          <Link href={`/route/${props.train.route.id}`}>
+            {props.train.route.name}
+          </Link>
+        </p>
+        <p>
+          <Link href={`/route/${props.train.route.id}`}>
+            {props.train.name}
+          </Link>
+        </p>
+        <p>{props.train.carriages} carriages</p>
+        <p>
+          <SecondsCounter time={props.train.lastUpdate} />
+        </p>
+        {props.train.stopped && <p>Stopped</p>}
+      </Popup>
+    </Marker>
   );
 }
 
@@ -142,18 +222,25 @@ export default function App(props: {
   colors?: Partial<Colors>;
 }) {
   const [map, setMap] = useState<L.Map | null>(null);
-  const [path, setPath] = useLocation();
-  const pathParts = path.substring(1).split("/");
+  const [location, setLocation] = useLocation();
+  const { data: trains } = useSWR("trains", () => Train.getAllLive(), {
+    refreshInterval: 15000,
+    revalidateOnFocus: false,
+    onError(err) {
+      console.error(err);
+    },
+  });
+  const pathParts = location.pathname.substring(1).split("/");
 
   const activeRoute =
     pathParts[0] === "route" ? `${pathParts[1]}/${pathParts[2]}` : undefined;
   function setActiveRoute(id: string) {
-    setPath(`/route/${id}`);
+    setLocation(`/route/${id}`);
   }
 
   const activeStation = pathParts[0] === "station" ? pathParts[1] : undefined;
   function setActiveStation(id: string) {
-    setPath(`/station/${id}`);
+    setLocation(`/station/${id}`);
   }
 
   const colors: Colors = {
@@ -199,6 +286,8 @@ export default function App(props: {
         background: colors.background,
       }}
     >
+      <style>{Train.getLiveryCSS()}</style>
+
       {Route.getAll().map((route) => (
         <RouteLine key={route.id} route={route} color="#eee" />
       ))}
@@ -214,6 +303,16 @@ export default function App(props: {
           }}
         />
       ))}
+
+      {trains
+        ?.filter(
+          (train) =>
+            train.route &&
+            (!resolvedActiveRoute || train.route.id === resolvedActiveRoute.id)
+        )
+        .map((train) => (
+          <TrainMarker key={train.id} train={train} />
+        ))}
 
       {resolvedActiveStation && (
         <StationInfoBox

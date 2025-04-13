@@ -10,6 +10,67 @@ body,
   height: 100%;
 }
 
+.csr-train-marker {
+  position: relative;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, Aptos, Segoe UI Variable,
+    Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.csr-livery {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  width: 24px;
+  height: 16px;
+  background: #fff;
+  border: 1px solid #000;
+  margin: 1px;
+  text-align: center;
+  line-height: 16px;
+  color: #000;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: transparent;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  stroke-width: 2px;
+  display: block;
+}
+
+.csr-livery::before {
+  content: "";
+  border: 4px solid #fff;
+  border-right: 5px solid #000;
+  border-left: 0;
+  position: absolute;
+  top: 4px;
+  left: -5px;
+  display: block;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.4rem;
+}
+
+.leaflet-popup-content {
+  margin: 0.5rem;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+}
+
+.leaflet-popup-content a {
+  text-decoration: none;
+}
+
+.leaflet-popup-content a:hover {
+  text-decoration: underline;
+}
+
 .csr-name-tooltip {
   background: transparent;
   box-shadow: none;
@@ -29,7 +90,7 @@ body,
 
 .csr-station-name {
   margin: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   line-height: 1;
 }
@@ -42,7 +103,7 @@ body,
 
 .csr-operator-name {
   margin: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 

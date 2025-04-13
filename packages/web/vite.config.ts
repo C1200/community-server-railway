@@ -14,4 +14,9 @@ export default defineConfig({
       stations,
     }),
   ],
+  server: {
+    proxy: {
+      "/api/trains": "http://server.mrjulsen.de:3876",
+    },
+  },
 });
