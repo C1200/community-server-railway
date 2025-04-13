@@ -51,6 +51,13 @@ body,
   display: block;
 }
 
+.csr-livery.csr-flip-livery::before {
+  border-left: 5px solid #000;
+  border-right: 0;
+  right: -5px;
+  left: auto;
+}
+
 .leaflet-popup-content-wrapper {
   border-radius: 0.4rem;
 }

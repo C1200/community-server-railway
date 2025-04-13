@@ -112,15 +112,22 @@ function TrainMarker(props: { train: Train }) {
     return null;
 
   const icon = document.createElement("svg");
+  let angle = props.train.angle;
 
   icon.classList.add("csr-livery");
-  if (props.train.angle > 180) icon.classList.add("csr-flip-livery");
-  if (props.train.livery)
+  if (angle < 180) {
+    icon.classList.add("csr-flip-livery");
+    angle -= 90;
+  }else{
+    angle -= 270
+  }
+  if (props.train.livery) {
     icon.classList.add("csr-livery-" + props.train.livery);
+  }
 
   icon.setAttribute("width", "24");
   icon.setAttribute("height", "16");
-  icon.style.rotate = `${props.train.angle}deg`;
+  icon.style.rotate = `${angle}deg`;
   icon.innerHTML = `<text x="12" y="12">${
     props.train.route?.short || ""
   }</text>`;

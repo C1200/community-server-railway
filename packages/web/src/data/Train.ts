@@ -82,6 +82,9 @@ export default class Train {
           ) *
             180) /
           Math.PI;
+
+          // ensure 0 >= angle > 360
+          this.angle=(this.angle%360 + 360)%360
       }
     }
 
