@@ -102,6 +102,11 @@ export default class Train {
         this.lastUpdate = cached.lastUpdate;
       }
     }
+
+    if (!this.angle) {
+      this.angle = 0;
+    }
+
     Train.cache.set(this.id, this);
   }
 

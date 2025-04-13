@@ -108,7 +108,11 @@ function RouteLine(props: { route: Route; color: string }) {
 }
 
 function TrainMarker(props: { train: Train }) {
-  if (!props.train.location || !props.train.angle || !props.train.route)
+  if (
+    !props.train.location ||
+    props.train.angle === undefined ||
+    !props.train.route
+  )
     return null;
 
   const icon = document.createElement("svg");
@@ -118,8 +122,8 @@ function TrainMarker(props: { train: Train }) {
   if (angle < 180) {
     icon.classList.add("csr-flip-livery");
     angle -= 90;
-  }else{
-    angle -= 270
+  } else {
+    angle -= 270;
   }
   if (props.train.livery) {
     icon.classList.add("csr-livery-" + props.train.livery);
