@@ -114,6 +114,14 @@ body,
   text-align: center;
 }
 
+.csr-operator-name a {
+  width: unset !important;
+  height: unset !important;
+  display: inline !important;
+  line-height: inherit !important;
+  background: none !important;
+}
+
 .csr-station-route {
   margin: 0;
 }

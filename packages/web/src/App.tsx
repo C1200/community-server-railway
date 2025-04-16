@@ -12,6 +12,7 @@ import {
   StationMarker,
   TrainInfoBox,
 } from "./components";
+import { OperatorInfoBox } from "./components/OperatorInfoBox";
 
 export interface Colors {
   background: string;
@@ -37,6 +38,7 @@ export default function App(props: {
     pathParts[0] === "route" ? `${pathParts[1]}/${pathParts[2]}` : undefined;
   const activeStation = pathParts[0] === "station" ? pathParts[1] : undefined;
   const activeTrain = pathParts[0] === "train" ? pathParts[1] : undefined;
+  const activeOperator = pathParts[0] === "operator" ? pathParts[1] : undefined;
 
   const colors: Colors = {
     background: props.colors?.background ?? "#fff",
@@ -163,6 +165,7 @@ export default function App(props: {
         )}
 
         {resolvedActiveTrain && <TrainInfoBox train={resolvedActiveTrain} />}
+        {activeOperator && <OperatorInfoBox operator={activeOperator} />}
       </LayersControl>
     </MapContainer>
   );

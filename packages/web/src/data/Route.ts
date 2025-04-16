@@ -73,6 +73,12 @@ export class Route {
     );
   }
 
+  static getByOperator(id: string): Route[] {
+    return routes
+      .filter((route) => route.operator === id || slug(route.operator) === id)
+      .map(this.wrap);
+  }
+
   get id() {
     return Route.getId(this);
   }

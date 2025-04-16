@@ -1,5 +1,6 @@
 import { Train } from "../data";
 import { Link } from "../utils/useLocation";
+import slug from "../utils/slug";
 import { OutlinedCircle } from "./OutlinedCircle";
 
 export function TrainInfoBox(props: { train: Train }) {
@@ -10,7 +11,14 @@ export function TrainInfoBox(props: { train: Train }) {
           {props.train.name} ({props.train.id.substring(0, 8)})
         </h2>
         <p className="csr-operator-name">
-          Owned by: {props.train.route?.operator || <i>Unknown</i>}
+          Owned by:{" "}
+          {props.train.route ? (
+            <Link href={`/operator/${slug(props.train.route.operator)}`}>
+              {props.train.route.operator}
+            </Link>
+          ) : (
+            "Unknown"
+          )}
         </p>
 
         {props.train.route && (
