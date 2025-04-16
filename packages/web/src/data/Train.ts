@@ -156,6 +156,7 @@ export class Train {
   }
 
   static getFromCache(id: string): Train | undefined {
-    return this.cache.get(id);
+    const results = [...this.cache.keys()].filter((k) => k.startsWith(id));
+    return results.length === 1 ? this.cache.get(results[0]) : undefined;
   }
 }

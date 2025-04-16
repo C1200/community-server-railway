@@ -31,7 +31,7 @@ export default function App(props: {
     },
   });
 
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const pathParts = location.pathname.substring(1).split("/");
 
   const activeRoute =
@@ -70,9 +70,16 @@ export default function App(props: {
   }, [map, resolvedActiveStation]);
 
   useEffect(() => {
+    if (
+      activeTrain &&
+      resolvedActiveTrain &&
+      activeTrain !== resolvedActiveTrain.id
+    )
+      return setLocation(`/train/${resolvedActiveTrain.id}`);
+
     if (map && resolvedActiveTrain?.location)
       map.flyTo(resolvedActiveTrain.location);
-  });
+  }, [map, activeTrain, resolvedActiveTrain, setLocation]);
 
   return (
     <MapContainer
