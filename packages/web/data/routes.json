@@ -238,5 +238,16 @@
       "Bardo (Tram)"
     ],
     "trains": ["1c4ba015-72a2-402c-9d84-de9b4b41b5e6"]
+  },
+  {
+    "name": "TGV001",
+    "operator": "Danube Trains",
+    "short": "TGV",
+    "color": "#A9455D",
+    "stations": [
+      "Danube HQ Temporary",
+      "Silverfall"
+    ],
+    "trains": ["9f6634a5-e464-4401-8b8e-45c4d7060659"]
   }
 ]

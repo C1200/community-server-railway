@@ -74,7 +74,7 @@
   "8": {
     "comment": "A1",
     "livery": {
-      "color": "linear-gradient(45deg, #405d7b 20%, #fff 20% 40%, #405d7b 40%)",
+      "color": "conic-gradient(from 225deg at 25%, #405d7b 90deg, #0000 90deg), conic-gradient(from 225deg at 50%, #fff 90deg, #0000 90deg), #405d7b",
       "text": "#fff",
       "stroke": "#405d7b"
     },
@@ -113,5 +113,79 @@
       "92fbbaed-9d17-407a-a2cf-2c48bff3e34a",
       "72c9d0bf-2c52-4b1e-9750-65b44cb89fb5"
     ]
+  },
+  "12": {
+    "comment": "Salzingen Tram",
+    "livery": {
+      "color": "linear-gradient(180deg, #19589f 30%, #efc206 30% 70%, #19589f 70%)",
+      "stroke": "#efc206"
+    },
+    "carriageOffset": 0,
+    "trains": [
+      "91c6c738-1f97-46d6-8a10-2a95f19f7c73",
+      "30d34a4d-42e9-4ece-933e-29a22e7eb308"
+    ]
+  },
+  "13": {
+    "comment": "North Bohemia Tram",
+    "livery": {
+      "color": "linear-gradient(180deg, #4c4a4c 50%, #8e303e 50% 75%, #fdfdfd 75%)",
+      "text": "#fff",
+      "stroke": "#4c4a4c"
+    },
+    "carriageOffset": 0,
+    "trains": ["1c4ba015-72a2-402c-9d84-de9b4b41b5e6"]
+  },
+  "14": {
+    "comment": "Many Danube Trains",
+    "livery": {
+      "color": "linear-gradient(45deg, #8d3828 20%, #f78a1e 20% 40%, #fff 40% 60%, #f78a1e 60% 80%, #8d3828 80%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": [
+      "077ad3e2-5e9a-4282-b23e-3ed22db0a4a0",
+      "d621c1aa-c82e-4cf4-8728-9ed6ea7719fa",
+      "410300b1-74c8-438e-9cd3-e6f470ecd5ca"
+    ]
+  },
+  "15": {
+    "comment": "Many Danube Trains (1 non-passanger)",
+    "livery": {
+      "color": "linear-gradient(45deg, #8d3828 20%, #f78a1e 20% 40%, #fff 40% 60%, #f78a1e 60% 80%, #8d3828 80%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 1,
+    "trains": [
+      "b545a0ac-a304-4f36-b5fb-b0e04154b254",
+      "3966ab5d-662f-4ede-95ec-aa6edabd55bb"
+    ]
+  },
+  "16": {
+    "comment": "Many Danube Trains (2 non-passanger)",
+    "livery": {
+      "color": "linear-gradient(45deg, #8d3828 20%, #f78a1e 20% 40%, #fff 40% 60%, #f78a1e 60% 80%, #8d3828 80%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 2,
+    "trains": ["9f6634a5-e464-4401-8b8e-45c4d7060659"]
+  },
+  "17": {
+    "comment": "Tokaj IC",
+    "livery": {
+      "color": "#488ea3",
+      "text": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": ["9c0c8eec-502d-497a-af19-a8f18cdf98be"]
+  },
+  "18": {
+    "comment": "SH Regional",
+    "livery": {
+      "color": "#777",
+      "text": "#fff"
+    },
+    "carriageOffset": 0,
+    "trains": ["7d17349f-8cbd-4c0e-b33e-1f32c306ae22"]
   }
 }
