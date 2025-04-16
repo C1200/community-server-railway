@@ -1,5 +1,5 @@
 import slug from "../utils/slug";
-import Train from "./Train";
+import { Train } from "./Train";
 import { Station } from "./Station";
 import _routes from "../../data/routes.json";
 
@@ -13,7 +13,7 @@ export interface RouteInit {
   color: string;
   stations: string[];
   trains: string[];
-};
+}
 
 export class Route {
   name: string;

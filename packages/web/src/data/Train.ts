@@ -25,7 +25,7 @@ interface TrainCarriage {
   trailing?: TrainBogie;
 }
 
-interface TrainInit {
+export interface TrainInit {
   id: string;
   name: string;
   owner: null;
@@ -38,7 +38,7 @@ interface TrackMapTrains {
   trains: TrainInit[];
 }
 
-export default class Train {
+export class Train {
   private static cache: Map<string, Train> = new Map();
 
   id: string;
