@@ -57,7 +57,8 @@ export default class Train {
     this.carriages = init.cars.length;
     this.stopped = init.stopped;
     this.lastUpdate = Date.now();
-
+    
+    const cached = Train.cache.get(this.id);
     const extraData = Train.getExtraData(init.id);
     if (extraData) {
       this.carriages -= extraData.carriageOffset;
@@ -74,7 +75,7 @@ export default class Train {
 
       this.location = xz(head.location);
 
-      if (!init.stopped) {
+      if (!init.stopped || !cached?.angle) {
         this.angle =
           (Math.atan2(
             tail.location.z - head.location.z,
@@ -86,26 +87,15 @@ export default class Train {
 
         // ensure 0 >= angle > 360
         this.angle = ((this.angle % 360) + 360) % 360;
+      } else {
+        this.angle = cached.angle;
       }
+    } else if (cached?.location) {
+      this.location = cached.location;
+      this.lastUpdate = cached.lastUpdate;
     }
 
     this.route = Route.getByTrain(this);
-
-    const cached = Train.cache.get(this.id);
-    if (cached) {
-      if (!this.angle) {
-        this.angle = cached.angle;
-      }
-
-      if (!this.location) {
-        this.location = cached.location;
-        this.lastUpdate = cached.lastUpdate;
-      }
-    }
-
-    if (!this.angle) {
-      this.angle = 0;
-    }
 
     Train.cache.set(this.id, this);
   }
