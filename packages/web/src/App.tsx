@@ -10,6 +10,7 @@ import {
   TrainMarker,
   RouteLine,
   StationMarker,
+  TrainInfoBox,
 } from "./components";
 
 export interface Colors {
@@ -22,25 +23,20 @@ export default function App(props: {
   colors?: Partial<Colors>;
 }) {
   const [map, setMap] = useState<L.Map | null>(null);
-  const [location, setLocation] = useLocation();
   const { data: trains } = useSWR("trains", () => Train.getAllLive(), {
     refreshInterval: 15000,
     onError(err) {
       console.error(err);
     },
   });
+
+  const [location] = useLocation();
   const pathParts = location.pathname.substring(1).split("/");
 
   const activeRoute =
     pathParts[0] === "route" ? `${pathParts[1]}/${pathParts[2]}` : undefined;
-  function setActiveRoute(id: string) {
-    setLocation(`/route/${id}`);
-  }
-
   const activeStation = pathParts[0] === "station" ? pathParts[1] : undefined;
-  function setActiveStation(id: string) {
-    setLocation(`/station/${id}`);
-  }
+  const activeTrain = pathParts[0] === "train" ? pathParts[1] : undefined;
 
   const colors: Colors = {
     background: props.colors?.background ?? "#fff",
@@ -53,10 +49,13 @@ export default function App(props: {
   const resolvedActiveStation = activeStation
     ? Station.getById(activeStation)
     : undefined;
+  const resolvedActiveTrain = activeTrain
+    ? Train.getFromCache(activeTrain)
+    : undefined;
 
   useEffect(() => {
-    if (resolvedActiveRoute)
-      map?.fitBounds(
+    if (map && resolvedActiveRoute)
+      map.fitBounds(
         L.polyline(
           resolvedActiveRoute.stations.map((station) => station.location)
         ).getBounds(),
@@ -65,8 +64,13 @@ export default function App(props: {
   }, [map, resolvedActiveRoute]);
 
   useEffect(() => {
-    if (resolvedActiveStation) map?.flyTo(resolvedActiveStation.location);
+    if (map && resolvedActiveStation) map.flyTo(resolvedActiveStation.location);
   }, [map, resolvedActiveStation]);
+
+  useEffect(() => {
+    if (map && resolvedActiveTrain?.location)
+      map.flyTo(resolvedActiveTrain.location);
+  });
 
   return (
     <MapContainer
@@ -98,9 +102,6 @@ export default function App(props: {
             station={station}
             colors={colors}
             dim={activeStation ? activeStation !== station.id : !!activeRoute}
-            onClick={() => {
-              setActiveStation(station.id);
-            }}
           />
         ))}
 
@@ -111,7 +112,8 @@ export default function App(props: {
                 (train) =>
                   train.route &&
                   (!resolvedActiveRoute ||
-                    train.route.id === resolvedActiveRoute.id)
+                    train.route.id === resolvedActiveRoute.id) &&
+                  (!resolvedActiveTrain || train.id === resolvedActiveTrain.id)
               )
               .map((train) => (
                 <TrainMarker key={train.id} train={train} />
@@ -122,7 +124,11 @@ export default function App(props: {
         <LayersControl.Overlay name="Untracked Trains">
           <LayerGroup>
             {trains
-              ?.filter((train) => !train.route)
+              ?.filter(
+                (train) =>
+                  !train.route &&
+                  (!resolvedActiveTrain || train.id === resolvedActiveTrain.id)
+              )
               .map((train) => (
                 <TrainMarker key={train.id} train={train} />
               ))}
@@ -130,18 +136,12 @@ export default function App(props: {
         </LayersControl.Overlay>
 
         {resolvedActiveStation && (
-          <StationInfoBox
-            station={resolvedActiveStation}
-            setActiveRoute={setActiveRoute}
-          />
+          <StationInfoBox station={resolvedActiveStation} />
         )}
 
         {resolvedActiveRoute && (
           <>
-            <RouteInfoBox
-              route={resolvedActiveRoute}
-              setActiveStation={setActiveStation}
-            />
+            <RouteInfoBox route={resolvedActiveRoute} />
 
             <RouteLine
               route={resolvedActiveRoute}
@@ -157,13 +157,12 @@ export default function App(props: {
                   ...colors,
                   station: resolvedActiveRoute.color,
                 }}
-                onClick={() => {
-                  setActiveStation(station.id);
-                }}
               />
             ))}
           </>
         )}
+
+        {resolvedActiveTrain && <TrainInfoBox train={resolvedActiveTrain} />}
       </LayersControl>
     </MapContainer>
   );

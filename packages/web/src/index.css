@@ -115,13 +115,19 @@ body,
 }
 
 .csr-station-route {
+  margin: 0;
+}
+
+.csr-station-route a {
   display: flex;
   align-items: center;
   gap: 0.3rem;
 
-  margin-top: 0.4rem;
+  padding: 0.2rem;
 
-  cursor: pointer;
+  width: unset !important;
+  height: unset !important;
+  line-height: unset !important;
 }
 
 .csr-station-route .csr-route-circle {

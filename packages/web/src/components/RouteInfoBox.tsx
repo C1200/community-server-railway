@@ -1,11 +1,9 @@
 import { OutlinedCircle } from "./OutlinedCircle";
 import { NormalCircle } from "./NormalCircle";
 import { Route } from "../data";
+import { Link } from "../utils/useLocation";
 
-export function RouteInfoBox(props: {
-  route: Route;
-  setActiveStation: (id: string) => void;
-}) {
+export function RouteInfoBox(props: { route: Route }) {
   return (
     <div className="leaflet-bottom leaflet-left">
       <div className="leaflet-control leaflet-bar csr-info-box">
@@ -13,22 +11,18 @@ export function RouteInfoBox(props: {
         <p className="csr-operator-name">Operated by: {props.route.operator}</p>
 
         {props.route.stations.map((station) => (
-          <div
-            key={station.id}
-            className="csr-station-route"
-            onClick={() => {
-              props.setActiveStation(station.id);
-            }}
-          >
-            {[props.route.firstStop.id, props.route.lastStop.id].includes(
-              station.id
-            ) ? (
-              <OutlinedCircle color={props.route.color} />
-            ) : (
-              <NormalCircle color={props.route.color} />
-            )}
-            <p className="csr-route-termini">{station.name}</p>
-          </div>
+          <p key={station.id} className="csr-station-route">
+            <Link href={`/station/${station.id}`}>
+              {[props.route.firstStop.id, props.route.lastStop.id].includes(
+                station.id
+              ) ? (
+                <OutlinedCircle color={props.route.color} />
+              ) : (
+                <NormalCircle color={props.route.color} />
+              )}
+              <span className="csr-route-termini">{station.name}</span>
+            </Link>
+          </p>
         ))}
       </div>
     </div>

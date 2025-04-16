@@ -1,14 +1,16 @@
 import { CircleMarker, Tooltip } from "react-leaflet";
 import { Colors } from "../App";
 import { Station } from "../data";
+import useLocation from "../utils/useLocation";
 
 export function StationMarker(props: {
   station: Station;
   colors: Colors;
   dim?: boolean;
   showTooltip?: boolean;
-  onClick?: () => void;
 }) {
+  const [, setLocation] = useLocation();
+
   return (
     <CircleMarker
       key={props.station.name}
@@ -22,7 +24,7 @@ export function StationMarker(props: {
       }}
       eventHandlers={{
         click() {
-          props.onClick?.();
+          setLocation(`/station/${props.station.id}`);
         },
       }}
     >

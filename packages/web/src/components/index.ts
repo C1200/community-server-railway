@@ -5,4 +5,5 @@ export * from "./RouteLine";
 export * from "./SecondsCounter";
 export * from "./StationInfoBox";
 export * from "./StationMarker";
+export * from "./TrainInfoBox";
 export * from "./TrainMarker";

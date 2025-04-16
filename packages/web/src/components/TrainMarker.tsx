@@ -48,13 +48,7 @@ export function TrainMarker(props: { train: Train }) {
           )}
         </p>
         <p>
-          {props.train.route ? (
-            <Link href={`/route/${props.train.route.id}`}>
-              {props.train.name}
-            </Link>
-          ) : (
-            props.train.name
-          )}
+          <Link href={`/train/${props.train.id}`}>{props.train.name}</Link>
         </p>
         <p>{props.train.carriages} carriages</p>
         <p>

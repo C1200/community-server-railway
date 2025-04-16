@@ -57,7 +57,7 @@ export class Train {
     this.carriages = init.cars.length;
     this.stopped = init.stopped;
     this.lastUpdate = Date.now();
-    
+
     const cached = Train.cache.get(this.id);
     const extraData = Train.getExtraData(init.id);
     if (extraData) {
@@ -153,5 +153,9 @@ export class Train {
     const { trains }: TrackMapTrains = await res.json();
 
     return trains.map(this.wrap);
+  }
+
+  static getFromCache(id: string): Train | undefined {
+    return this.cache.get(id);
   }
 }
