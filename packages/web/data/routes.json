@@ -134,8 +134,8 @@
     "trains": ["981f0680-d0cc-4b9e-a744-e2f1b24bbbe2"]
   },
   {
-    "name": "Tojak IC",
-    "operator": "Tojak",
+    "name": "Tokaj IC",
+    "operator": "Tokaj",
     "short": "TIC",
     "color": "#000",
     "stations": [
