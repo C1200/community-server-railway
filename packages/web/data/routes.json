@@ -23,7 +23,6 @@
       "Two Cities Central",
       "Spawn",
       "Lavender Valley",
-      "Salzingen (Nord)",
       "Salzingen Hbf"
     ],
     "trains": ["27a9e5f2-103b-434e-87d5-2293e6f60f58"]
@@ -61,7 +60,7 @@
       "Spawn",
       "Lavender Valley",
       "Nebelburg",
-      "Salzingen (Nord)",
+      "Salzingen Nord",
       "Salzingen Hbf"
     ],
     "trains": ["6d79a14c-5dd2-4e3c-ac05-f94e799fd641"]
@@ -207,5 +206,37 @@
     "color": "#A9455D",
     "stations": ["Silverfall", "Kothausen", "Two Cities Central"],
     "trains": ["c90845d0-6aa7-4040-a987-115c6d5b29e9"]
+  },
+  {
+    "name": "SVB 1E",
+    "operator": "LVB",
+    "short": "1E",
+    "color": "#efc206",
+    "stations": [
+      "S. Silberstrombrücke (Tram)",
+      "S. Westplatz (Tram)",
+      "Salzingen Hbf (Tram)",
+      "S. Karl Liebknecht Str. (Tram)",
+      "S. Plagwitz Post (Tram)"
+    ],
+    "trains": [
+      "91c6c738-1f97-46d6-8a10-2a95f19f7c73",
+      "30d34a4d-42e9-4ece-933e-29a22e7eb308"
+    ]
+  },
+  {
+    "name": "Tram",
+    "operator": "North Bohemia Tramways",
+    "short": "NB",
+    "color": "#f00",
+    "stations": [
+      "Bardo (Tram)",
+      "Suburbs (Tram)",
+      "Main Station (Tram)",
+      "Suburbs (Tram)",
+      "Aussig City (Tram)",
+      "Bardo (Tram)"
+    ],
+    "trains": ["1c4ba015-72a2-402c-9d84-de9b4b41b5e6"]
   }
 ]
