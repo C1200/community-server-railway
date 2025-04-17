@@ -196,7 +196,7 @@
     "operator": "Danube Trains",
     "short": "103",
     "color": "#A9455D",
-    "stations": ["Szolnok", "Silverfall", "Kothausen", "Tercet", "Przerywnik"],
+    "stations": ["Silverfall", "Szolnok", "Przerywnik", "Wawer"],
     "trains": ["077ad3e2-5e9a-4282-b23e-3ed22db0a4a0"]
   },
   {
