@@ -187,5 +187,15 @@
     },
     "carriageOffset": 0,
     "trains": ["7d17349f-8cbd-4c0e-b33e-1f32c306ae22"]
+  },
+  "19": {
+    "comment": "North Bohemia Tram 2",
+    "livery": {
+      "color": "linear-gradient(180deg, #ccad9e 30%, #8e3d2e 30% 70%, #ccad9e 70%)",
+      "text": "#fff",
+      "stroke": "#8e3d2e"
+    },
+    "carriageOffset": 0,
+    "trains": ["5bc7c6ad-8e6d-4541-bf89-544a6c993105"]
   }
 }

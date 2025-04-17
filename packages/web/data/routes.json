@@ -197,7 +197,7 @@
     "short": "103",
     "color": "#A9455D",
     "stations": ["Silverfall", "Szolnok", "Przerywnik", "Wawer"],
-    "trains": ["077ad3e2-5e9a-4282-b23e-3ed22db0a4a0"]
+    "trains": ["c103e2de-76ab-4a97-ba00-b05234a7190a"]
   },
   {
     "name": "IC 104",
@@ -225,9 +225,9 @@
     ]
   },
   {
-    "name": "Tram",
+    "name": "1",
     "operator": "North Bohemia Tramways",
-    "short": "NB",
+    "short": "1",
     "color": "#f00",
     "stations": [
       "Bardo (Tram)",
@@ -244,10 +244,20 @@
     "operator": "Danube Trains",
     "short": "TGV",
     "color": "#A9455D",
-    "stations": [
-      "Danube HQ Temporary",
-      "Silverfall"
-    ],
+    "stations": ["Danube HQ Temporary", "Silverfall"],
     "trains": ["9f6634a5-e464-4401-8b8e-45c4d7060659"]
+  },
+  {
+    "name": "2",
+    "operator": "North Bohemia Tramways",
+    "short": "2",
+    "color": "#f00",
+    "stations": [
+      "Wawer (Tram)",
+      "Suburbs (Tram)",
+      "Aussig City (Tram)",
+      "ČKD Depot"
+    ],
+    "trains": ["5bc7c6ad-8e6d-4541-bf89-544a6c993105"]
   }
 ]

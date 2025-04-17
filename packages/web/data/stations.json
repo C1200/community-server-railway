@@ -283,7 +283,11 @@
   },
   {
     "name": "Suburbs (Tram)",
-    "includes": ["N.B. - Suburbs , W"]
+    "includes": [
+      "N.B. - Suburbs , W",
+      "N.B. - Suburbs , E2",
+      "N.B. - Suburbs - E1"
+    ]
   },
   {
     "name": "Main Station (Tram)",
@@ -292,5 +296,13 @@
   {
     "name": "Aussig City (Tram)",
     "includes": ["N.B. - Aussig City"]
+  },
+  {
+    "name": "Wawer (Tram)",
+    "includes": ["Wewer - tram station (1)"]
+  },
+  {
+    "name": "ČKD Depot",
+    "includes": ["CKD Depot 2"]
   }
 ]
