@@ -197,5 +197,14 @@
     },
     "carriageOffset": 0,
     "trains": ["5bc7c6ad-8e6d-4541-bf89-544a6c993105"]
+  },
+  "20": {
+    "comment": "New IC 103",
+    "livery": {
+      "color": "linear-gradient(20deg, #f78a1e 20%, #8d3828 20% 40%, #fff 40% 60%, #8d3828 60% 80%, #f78a1e 80%)",
+      "stroke": "#fff"
+    },
+    "carriageOffset": 1,
+    "trains": ["c103e2de-76ab-4a97-ba00-b05234a7190a"]
   }
 }
