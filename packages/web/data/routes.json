@@ -148,19 +148,19 @@
     "trains": ["9c0c8eec-502d-497a-af19-a8f18cdf98be"]
   },
   {
-    "name": "RE 101",
+    "name": "L 201",
     "suffix": "A",
     "operator": "Danube Trains",
-    "short": "101A",
+    "short": "201A",
     "color": "#A9455D",
     "stations": ["Fairyfield", "Ivory Beach", "Molten Works", "Silverfall"],
     "trains": ["410300b1-74c8-438e-9cd3-e6f470ecd5ca"]
   },
   {
-    "name": "RE 101",
+    "name": "L 201",
     "suffix": "B",
     "operator": "Danube Trains",
-    "short": "101B",
+    "short": "201B",
     "color": "#A9455D",
     "stations": ["Pripyat", "Ivory Beach", "Molten Works", "Silverfall"],
     "trains": ["3966ab5d-662f-4ede-95ec-aa6edabd55bb"]
@@ -259,5 +259,18 @@
       "ČKD Depot"
     ],
     "trains": ["5bc7c6ad-8e6d-4541-bf89-544a6c993105"]
+  },
+  {
+    "name": "IC 105",
+    "operator": "Danube Trains",
+    "short": "105",
+    "color": "#A9455D",
+    "stations": [
+      "Silverfall",
+      "Novaburg Central",
+      "Salzingen Nord",
+      "Salzingen Hbf"
+    ],
+    "trains": ["ecda6ad5-2f2a-49d2-8c57-8427d820d54b"]
   }
 ]

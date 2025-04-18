@@ -69,14 +69,14 @@
   {
     "name": "Salzingen Hbf (Tram)",
     "includes": [
-      "Salzingen Hbf (Tram) 3 W",
-      "Salzingen Hbf (Tram) 4 W",
-      "Salzingen Hbf (Tram) 3 E",
-      "Salzingen Hbf (Tram) 4 E",
-      "Salzingen Hbf (Tram) 2 W",
-      "Salzingen Hbf (Tram) 1 W",
-      "Salzingen Hbf (Tram) 2 E",
-      "Salzingen Hbf (Tram) 1 E"
+      "Salzingen HbfT 3 W",
+      "Salzingen HbfT 4 W",
+      "Salzingen HbfT 3 E",
+      "Salzingen HbfT 4 E",
+      "Salzingen HbfT 2 W",
+      "Salzingen HbfT 1 W",
+      "Salzingen HbfT 2 E",
+      "Salzingen HbfT 1 E"
     ]
   },
   {
@@ -304,5 +304,9 @@
   {
     "name": "ČKD Depot",
     "includes": ["CKD Depot 2"]
+  },
+  {
+    "name": "Novaburg Central",
+    "includes": ["Novaburg Central N", "Novaburg Central S"]
   }
 ]
